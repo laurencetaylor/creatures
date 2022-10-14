@@ -1,4 +1,4 @@
-import {Bird} from './Creatures/Bird';
+import {Bird} from './Creature/Bird';
 
 const bird = new Bird();
 

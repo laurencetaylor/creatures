@@ -4,7 +4,7 @@
   "description": "Creature collection and battle game",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint '**/*.ts'",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -12,11 +12,19 @@
   "license": "ISC",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "^29.1.2",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "eslint": "^8.25.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.2.0",
     "prettier": "2.7.1",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.8.4"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
   }
 }
