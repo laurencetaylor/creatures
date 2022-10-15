@@ -1,8 +1,12 @@
 import {Species} from '../Constants/Species';
 
-interface Creature {
-  species: Species;
-  position: [number, number] | null;
+abstract class Creature {
+  public abstract species: Species;
+  public position: [number, number] | null = null;
+
+  public setPosition(x: number, y: number) {
+    this.position = [x, y];
+  }
 }
 
 export {Creature};

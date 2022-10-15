@@ -1,9 +1,21 @@
-import {Species} from '../Creature/Constants/Species';
 import {Creature} from '../Creature/Interfaces/Creature';
+import {TestCreature} from '../Creature/Mock/TestCreature';
 import {Game} from './Game';
 
 describe('Game', () => {
+  let mockCreature: Creature;
+  let mockCreatureFactory: () => Creature;
+
+  beforeEach(() => {
+    jest.spyOn(TestCreature.prototype, 'setPosition');
+
+    mockCreature = new TestCreature();
+
+    mockCreatureFactory = () => mockCreature;
+  });
+
   afterEach(() => {
+    jest.spyOn(TestCreature.prototype, 'setPosition').mockRestore();
     jest.spyOn(Math, 'random').mockRestore();
   });
 
@@ -31,10 +43,6 @@ describe('Game', () => {
         jest.spyOn(Math, 'random').mockReturnValueOnce(number);
       });
 
-      const mockCreature = {species: Species.RUNNER, position: null};
-
-      const mockCreatureFactory = (): Creature => mockCreature;
-
       game.populateWorld(2, mockCreatureFactory);
 
       const expected = [
@@ -43,6 +51,14 @@ describe('Game', () => {
       ];
 
       expect(game.world).toStrictEqual(expected);
+    });
+
+    it('should call `setPosition` on the created creature', () => {
+      const game = new Game(1);
+
+      game.populateWorld(1, mockCreatureFactory);
+
+      expect(mockCreature.setPosition).toHaveBeenCalledWith(0, 0);
     });
   });
 });

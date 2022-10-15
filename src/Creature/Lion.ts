@@ -1,9 +1,8 @@
 import {Species} from './Constants/Species';
 import {Creature} from './Interfaces/Creature';
 
-class Lion implements Creature {
+class Lion extends Creature {
   public species = Species.RUNNER;
-  public position = null;
 }
 
 export {Lion};

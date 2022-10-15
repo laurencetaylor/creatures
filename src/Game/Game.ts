@@ -18,15 +18,19 @@ class Game {
     creatureFactory: () => Creature = randomCreatureFactory
   ) {
     for (let i = 0; i < numberOfCreatures; i++) {
-      let isCreatureAdded = false;
+      let isCreatureInserted = false;
 
-      while (!isCreatureAdded) {
+      while (!isCreatureInserted) {
         const x = Math.floor(Math.random() * this.world.length);
         const y = Math.floor(Math.random() * this.world.length);
 
         if (this.world[x][y] === null) {
-          this.world[x][y] = creatureFactory();
-          isCreatureAdded = true;
+          const creature = creatureFactory();
+
+          this.world[x][y] = creature;
+          creature.setPosition(x, y);
+
+          isCreatureInserted = true;
         }
       }
     }

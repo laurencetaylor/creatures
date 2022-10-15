@@ -6,12 +6,12 @@ describe('randomCreatureFactory', () => {
     jest.spyOn(Math, 'random').mockRestore();
   });
 
-  it('returns a random object implementing `Creature`', () => {
-    jest.spyOn(Math, 'random').mockReturnValue(0.4);
-
-    const Species = speciesList[1];
+  it('returns an object implementing `Creature`', () => {
+    jest.spyOn(Math, 'random').mockReturnValue(0.99);
 
     const output = randomCreatureFactory();
+
+    const Species = speciesList[2];
     const expected = new Species();
 
     expect(output).toStrictEqual(expected);
