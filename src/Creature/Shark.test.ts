@@ -5,6 +5,6 @@ describe('Shark', () => {
   it('should have species `Species.SWIMMER`', () => {
     const shark = new Shark();
 
-    expect(shark.species).toEqual(Species.SWIMMER);
+    expect(shark.species).toBe(Species.SWIMMER);
   });
 });

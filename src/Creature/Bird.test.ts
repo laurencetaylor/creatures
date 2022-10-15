@@ -5,6 +5,6 @@ describe('Bird', () => {
   it('should have species `Species.FLYER`', () => {
     const bird = new Bird();
 
-    expect(bird.species).toEqual(Species.FLYER);
+    expect(bird.species).toBe(Species.FLYER);
   });
 });

@@ -5,6 +5,6 @@ describe('Lion', () => {
   it('should have species `Species.RUNNER`', () => {
     const lion = new Lion();
 
-    expect(lion.species).toEqual(Species.RUNNER);
+    expect(lion.species).toBe(Species.RUNNER);
   });
 });
