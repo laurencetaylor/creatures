@@ -31,8 +31,8 @@ describe('Game', () => {
     expect(game.world).toStrictEqual(expected);
   });
 
-  describe('.populateWorld()', () => {
-    it('should populate `world` with `numberOfCreatures` without overwriting existing creatures', () => {
+  describe('.populateWorldWithInhabitants()', () => {
+    it('should populate `world` with `numberOfInhabitants` without overwriting existing inhabitants', () => {
       const game = new Game(2);
 
       const firstXY = [0, 0];
@@ -43,7 +43,7 @@ describe('Game', () => {
         jest.spyOn(Math, 'random').mockReturnValueOnce(number);
       });
 
-      game.populateWorld(2, mockCreatureFactory);
+      game.populateWorldWithInhabitants(2, mockCreatureFactory);
 
       const expected = [
         [mockCreature, null],
@@ -53,10 +53,10 @@ describe('Game', () => {
       expect(game.world).toStrictEqual(expected);
     });
 
-    it('should call `setPosition` on the created creature', () => {
+    it('should call `setPosition` on the created inhabitant', () => {
       const game = new Game(1);
 
-      game.populateWorld(1, mockCreatureFactory);
+      game.populateWorldWithInhabitants(1, mockCreatureFactory);
 
       expect(mockCreature.setPosition).toHaveBeenCalledWith(0, 0);
     });

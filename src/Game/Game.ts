@@ -1,11 +1,10 @@
 import {Collector} from '../Collector/Collector';
 import {Creature} from '../Creature/Interfaces/Creature';
-import {randomCreatureFactory} from '../Util/randomCreatureFactory';
 
-type WorldInhabitant = Creature | Collector | null;
+type WorldInhabitant = Creature | Collector;
 
 class Game {
-  public world: WorldInhabitant[][];
+  public world: (WorldInhabitant | null)[][];
 
   constructor(worldSize: number) {
     this.world = Array.from(new Array(worldSize), () =>
@@ -13,24 +12,24 @@ class Game {
     );
   }
 
-  public populateWorld(
-    numberOfCreatures: number,
-    creatureFactory: () => Creature = randomCreatureFactory
-  ) {
-    for (let i = 0; i < numberOfCreatures; i++) {
-      let isCreatureInserted = false;
+  public populateWorldWithInhabitants(
+    numberOfInhabitants: number,
+    inhabitantFactory: () => WorldInhabitant
+  ): void {
+    for (let i = 0; i < numberOfInhabitants; i++) {
+      let isInserted = false;
 
-      while (!isCreatureInserted) {
+      while (!isInserted) {
         const x = Math.floor(Math.random() * this.world.length);
         const y = Math.floor(Math.random() * this.world.length);
 
         if (this.world[x][y] === null) {
-          const creature = creatureFactory();
+          const inhabitant = inhabitantFactory();
 
-          this.world[x][y] = creature;
-          creature.setPosition(x, y);
+          this.world[x][y] = inhabitant;
+          inhabitant.setPosition(x, y);
 
-          isCreatureInserted = true;
+          isInserted = true;
         }
       }
     }

@@ -4,7 +4,7 @@ abstract class Creature {
   public abstract species: Species;
   public position: [number, number] | null = null;
 
-  public setPosition(x: number, y: number) {
+  public setPosition(x: number, y: number): void {
     this.position = [x, y];
   }
 }
