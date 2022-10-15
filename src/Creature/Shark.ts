@@ -1,7 +1,7 @@
 import {Species} from './Constants/Species';
-import {ICreature} from './Interfaces/ICreature';
+import {Creature} from './Interfaces/Creature';
 
-class Shark implements ICreature {
+class Shark implements Creature {
   public species = Species.SWIMMER;
   public position = null;
 }

@@ -1,5 +1,5 @@
 import {Bird} from './Creature/Bird';
+import {Game} from './Game/Game';
 
 const bird = new Bird();
-
-console.info(bird);
+const game = new Game(5);

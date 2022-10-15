@@ -1,8 +1,8 @@
 import {Species} from '../Constants/Species';
 
-interface ICreature {
+interface Creature {
   species: Species;
   position: [number, number] | null;
 }
 
-export {ICreature};
+export {Creature};
