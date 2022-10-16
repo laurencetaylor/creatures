@@ -43,7 +43,7 @@ class Collector {
 
     for (let x = xPosition - factor; x <= xPosition + factor; x++) {
       for (let y = yPosition - factor; y <= yPosition + factor; y++) {
-        const inhabitant = world[x][y];
+        const inhabitant = world[x]?.[y];
 
         if (inhabitant instanceof Creature) {
           nearbyCreatures.push(inhabitant);
