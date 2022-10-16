@@ -7,6 +7,10 @@ abstract class Creature {
   public setPosition(x: number, y: number): void {
     this.position = [x, y];
   }
+
+  public unsetPosition(): void {
+    this.position = null;
+  }
 }
 
 export {Creature};

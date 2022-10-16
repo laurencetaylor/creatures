@@ -1,15 +1,19 @@
-import {Collector} from '../Collector/Collector';
-import {Creature} from '../Creature/Interfaces/Creature';
-
-type WorldInhabitant = Creature | Collector;
+import {World} from './Interfaces/World';
+import {WorldInhabitant} from './Interfaces/WorldInhabitant';
 
 class Game {
-  public world: (WorldInhabitant | null)[][];
+  public world: World;
 
   constructor(worldSize: number) {
+    this.unsetWorldSquare = this.unsetWorldSquare.bind(this);
+
     this.world = Array.from(new Array(worldSize), () =>
       new Array(worldSize).fill(null)
     );
+  }
+
+  public unsetWorldSquare(x: number, y: number): void {
+    this.world[x][y] = null;
   }
 
   public populateWorldWithInhabitants(
