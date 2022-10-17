@@ -1,5 +1,5 @@
 import {speciesList} from '../Creature/Constants/speciesList';
-import {Creature} from '../Creature/Interfaces/Creature';
+import {Creature} from '../Creature/Abstract/Creature';
 
 const randomCreatureFactory = (): Creature => {
   const RandomSpecies =

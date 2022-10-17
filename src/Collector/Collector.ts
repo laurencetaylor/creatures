@@ -1,4 +1,4 @@
-import {Creature} from '../Creature/Interfaces/Creature';
+import {Creature} from '../Creature/Abstract/Creature';
 import {World} from '../Game/Interfaces/World';
 
 class Collector {

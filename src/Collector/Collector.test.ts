@@ -1,4 +1,4 @@
-import {Creature} from '../Creature/Interfaces/Creature';
+import {Creature} from '../Creature/Abstract/Creature';
 import {TestCreatureRunner} from '../Creature/Mock/TestCreature';
 import {World} from '../Game/Interfaces/World';
 import {Collector} from './Collector';

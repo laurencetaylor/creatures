@@ -1,5 +1,5 @@
 import {Species} from './Constants/Species';
-import {Creature} from './Interfaces/Creature';
+import {Creature} from './Abstract/Creature';
 
 class Amphibian extends Creature {
   readonly species = Species.PSYCHIC;

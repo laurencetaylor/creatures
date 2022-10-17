@@ -1,5 +1,5 @@
 import {Species} from './Constants/Species';
-import {Creature} from './Interfaces/Creature';
+import {Creature} from './Abstract/Creature';
 
 class Bird extends Creature {
   readonly species = Species.FLYER;
