@@ -1,6 +1,6 @@
 import {criticalModifier} from '../Constants/criticalModifier';
 import {Species} from '../Constants/Species';
-import {speciesToSuperEffectiveSpeciesMap} from '../Constants/superEffectiveSpeciesMap';
+import {speciesToSuperEffectiveSpeciesMap} from '../Constants/speciesToSuperEffectiveSpeciesMap';
 
 abstract class Creature {
   abstract readonly species: Species;

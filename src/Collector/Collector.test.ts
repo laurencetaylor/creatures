@@ -1,5 +1,5 @@
 import {Creature} from '../Creature/Interfaces/Creature';
-import {TestCreature} from '../Creature/Mock/TestCreature';
+import {TestCreatureRunner} from '../Creature/Mock/TestCreature';
 import {World} from '../Game/Interfaces/World';
 import {Collector} from './Collector';
 
@@ -49,8 +49,8 @@ describe('Collector', () => {
       let mockWorld: World;
 
       beforeEach(() => {
-        mockCreatureA = new TestCreature();
-        mockCreatureB = new TestCreature();
+        mockCreatureA = new TestCreatureRunner();
+        mockCreatureB = new TestCreatureRunner();
 
         mockWorld = [
           [mockCreatureA, null, null],

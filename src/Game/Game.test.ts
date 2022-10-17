@@ -1,5 +1,5 @@
 import {Creature} from '../Creature/Interfaces/Creature';
-import {TestCreature} from '../Creature/Mock/TestCreature';
+import {TestCreatureRunner} from '../Creature/Mock/TestCreature';
 import {Game} from './Game';
 
 describe('Game', () => {
@@ -7,15 +7,15 @@ describe('Game', () => {
   let mockCreatureFactory: () => Creature;
 
   beforeEach(() => {
-    jest.spyOn(TestCreature.prototype, 'setPosition');
+    jest.spyOn(TestCreatureRunner.prototype, 'setPosition');
 
-    mockCreature = new TestCreature();
+    mockCreature = new TestCreatureRunner();
 
     mockCreatureFactory = () => mockCreature;
   });
 
   afterEach(() => {
-    jest.spyOn(TestCreature.prototype, 'setPosition').mockRestore();
+    jest.spyOn(TestCreatureRunner.prototype, 'setPosition').mockRestore();
     jest.spyOn(Math, 'random').mockRestore();
   });
 
